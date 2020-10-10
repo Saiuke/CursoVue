@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Página Modelo</title>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <!--  Meu CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Vue -->
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <template v-if='logado'>
+            <p>Usuário logado: {{ nome }}</p>
+            <p>ADMIN PANEL</p>
+        </template>
+        <p v-else-if="anonimo">Usuário anônimo</p>
+        <p v-else>Nenhum usuário logado</p>
+        <button @click="logado = !logado">{{ logado ? 'Sair' : 'Entrar'}}</button>
+        <br><br>
+        <span>Permitir navegação anônima?  
+        </span>
+        <input type="checkbox" v-model="anonimo">
+        <br><br>
+        <span v-if='anonimo'>Navegação anônima ativada</span> <span v-else>Navegação anônima desativada</span>
+        <br>
+        <hr>
+        <footer v-show="logado">
+            <h2>Lorem, ipsum dolor</h2>
+            <p>Sit amet consectetur adipisicing elit. Explicabo corrupti ut possimus repudiandae, asperiores quisquam ipsam repellendus minus illo ratione excepturi accusantium ea facere saepe veniam sit fugiat. Sit, labore.</p>
+        </footer>
+    </div>
+    <!-- Js personalizado -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

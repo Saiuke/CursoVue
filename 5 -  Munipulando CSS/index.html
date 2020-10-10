@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Página Modelo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--  Meu CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Vue -->
+     <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="demo" :class="{blueBackground: aplicarBlueBackground}" @click="aplicarBlueBackground = !aplicarBlueBackground"></div>    
+        <div class="demo" :class="{greenBackground: aplicarGreen}" @click = "aplicarGreen = !aplicarGreen"></div>    
+        <div class="demo"></div>    
+    </div>
+
+    <!-- Js personalizado -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

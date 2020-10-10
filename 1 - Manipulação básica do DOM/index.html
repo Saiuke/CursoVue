@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Página Modelo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--  Meu CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Vue -->
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+       <p>{{titulo}}</p>
+       <p>{{link_html}}</p>
+       <p v-html="link_html"></p>
+       <a v-bind:href="link"></a>
+       <br>
+       <p>{{counter}}</p>
+       <button @mousedown="startInc" @mouseup="stopInc">Incrementar</button>
+    </div>
+
+    <!-- Js personalizado -->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Coisa trem',
+                link: 'http://google.com.br',
+                link_html: '<a href="http://uol.com.br">Uol</a>',
+                counter: 0,
+                interval: false
+            },
+            methods: {
+                saudacao: function () {
+                    this.titulo = 'Chocotalita'
+                    return this.titulo
+                },
+
+                //Funcoes para iniciar e para o contador
+                startInc(event){
+                    if(!this.interval){
+                        this.interval = setInterval(()=>this.counter++, 30)
+                        console.log(event)
+                    }
+                },
+                stopInc(event){
+                    clearInterval(this.interval)
+                    this.interval = false
+                    console.log(event)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

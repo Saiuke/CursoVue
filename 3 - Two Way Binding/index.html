@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Página Modelo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--  Meu CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Vue -->
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+       <p>{{titulo}}</p>
+       <input type="text" v-model="titulo">
+    </div>
+
+    <!-- Js personalizado -->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+               titulo: 'Chonks Chonks',
+            },
+            methods: {
+                
+            }
+        })
+    </script>
+</body>
+
+</html>

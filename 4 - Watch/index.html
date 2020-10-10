@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Página Modelo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--  Meu CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Vue -->
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+       <button @click="incValue">Aumentar valor A</button>
+       <button @click="valueB++">Aumentar valor B</button>
+       <button @click="decValue">Diminuir valor A</button>
+       <p>Valor A: {{valueA}} || Valor B: {{valueB}}</p>
+       <p>Resultado: {{compResult}}</p>
+    </div>
+
+    <!-- Js personalizado -->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+               valueA: 0,
+               valueB: 0,
+            },
+            computed:{
+                compResult(){
+                    console.log('O mètodo resultado foi chamado...')
+                    return this.valueA >= 5 ? 'Maior que 5' : 'Menor que 5'
+                }
+            },
+            watch:{
+                valueA(old, neo){
+                    //console.log(old, neo)
+                    setTimeout(() => {
+                        this.valueA = 0
+                    }, 2000)
+                }
+            },
+            methods: {
+                incValue() {
+                    this.valueA++
+                },
+                decValue() {
+                    this.valueA--
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

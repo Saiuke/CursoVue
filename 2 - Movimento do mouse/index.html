@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Página Modelo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--  Meu CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Vue -->
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+       <p @mousemove="updateCoord">Coodenadas do mouse -> X:{{x}} e Y:{{y}}
+        <span @mousemove.stop="">DO NOT WORK HERE</span>
+       </p>
+       <a @click.prevent href="http://google.com">Google</a>
+       <hr>
+       <p>{{contador}}</p>
+       <button @mousedown="incContador(5, $event)">Incrementar</button>
+       <hr>
+       <input type="text" @keyup.enter="alertUser">
+    </div>
+
+    <!-- Js personalizado -->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+               x: 0,
+               y: 0,
+               contador: 0,
+            },
+            methods: {
+               updateCoord: function(event){
+                this.x = event.clientX
+                this.y = event.clientY
+               },
+               incContador: function(value, event){
+                console.log(value, event)
+                this.contador += event.clientX
+               },
+               alertUser: function(){
+                alert("Yeehaa!")
+               }
+            }
+        })
+    </script>
+</body>
+
+</html>

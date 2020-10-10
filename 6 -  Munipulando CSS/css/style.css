@@ -1,0 +1,46 @@
+.caixas{
+    display: flex;
+    justify-content: space-around;
+}
+
+.caixas .demo{
+    width: 150px;
+    height: 150px;
+    background-color: darkkhaki;
+}
+
+.redBackground{
+    background-color: red !important;
+}
+
+.blueBackground{
+    background-color: blue;
+    animation-duration: 5000ms; 
+    animation-name: roundAndRound;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    
+}
+
+@keyframes roundAndRound{
+    0%{
+        background-color: darkgreen;
+        border-radius: 0%;
+    }
+    50%{
+        background-color: goldenrod;
+        border-radius: 50%;
+    }
+    100%{
+        background-color: darkgreen;
+        border-radius: 0%;
+    }
+}
+
+.greenBackground{
+    background-color: green;
+    animation-duration: 5000ms; 
+    animation-name: roundAndRound;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
