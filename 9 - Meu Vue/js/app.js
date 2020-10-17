@@ -1,4 +1,5 @@
 function MeuVue(param) {
+    console.log(param.el);
     this.$el = document.querySelector(param.el)
     this.$data = param.data
 
