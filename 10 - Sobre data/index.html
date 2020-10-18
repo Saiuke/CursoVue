@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Página Modelo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--  Meu CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Vue -->
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Lista de cores</h1>
+        <ul>
+            <li v-for="cor in cores">{{cor}}</li>
+        </ul>
+        <hr>
+        <h1>Lista de cores</h1>
+        <ul>
+            <li v-for="(cor, i) in cores">{{i}} - {{cor}}</li>
+        </ul>
+        <hr>
+        <h1>Lista de pessoas</h1>
+        <ul>
+            <li v-for="pessoa in pessoas">{{pessoa.nome}} // {{pessoa.idade}} // {{pessoa.peso}}</li>
+        </ul>
+        <h1>Tabela de pessoas</h1>
+        <table>
+            <tr>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Peso</th>
+            </tr>
+            <tr v-for="pessoa in pessoas">
+              <td v-for="dado in pessoa">{{dado}}</td>
+            </tr>
+        </table>
+    </div>
+    <!-- Js personalizado -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
