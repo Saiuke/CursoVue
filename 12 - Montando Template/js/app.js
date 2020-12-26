@@ -1,5 +1,5 @@
 new Vue({
-    el: '#app',
+    //el: '#app',
     data: {
         aula: 'Usando Refs',
         modulo: 'Módulo: Instancia Vue'
@@ -19,3 +19,5 @@ new Vue({
         }
     }
 });
+
+vm.$mount('#app');
