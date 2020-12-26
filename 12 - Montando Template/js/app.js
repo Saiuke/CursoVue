@@ -1,5 +1,4 @@
-new Vue({
-    //el: '#app',
+const vm = new Vue({
     data: {
         aula: 'Usando Refs',
         modulo: 'Módulo: Instancia Vue'
