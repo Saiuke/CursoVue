@@ -1,5 +1,4 @@
-const vm = new Vue({
-    el: '#app',
+Vue.component('comp',{
     template: `
     <div>
         <h1>{{ aula }}</h1>
@@ -8,9 +7,11 @@ const vm = new Vue({
         <button @click="alterarModulo">Alterar módulo</button>
     </div>
     `,
-    data: {
+    data: function (){
+      return {
         aula: 'Usando Refs',
         modulo: 'Módulo: Instancia Vue'
+      }
     },
     computed: {
 
@@ -26,4 +27,8 @@ const vm = new Vue({
         this.modulo += '#'
         }
     }
+})
+
+const vm = new Vue({
+    el: '#app',
 });
