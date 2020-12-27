@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <h1 :class="classeTitulo">Título teste</h1><br>
+   <button @click='mudarClasse'>Mudar Classe</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data: function(){
+    return{
+      classeTitulo: 'arbey',
+    }
+  },
+  methods: {
+    mudarClasse(){
+      if(this.classeTitulo == 'arbey'){
+        this.classeTitulo = 'noxious';
+      }else{
+        this.classeTitulo = 'arbey'
+      }
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .arbey{
+    background-color: aqua;
+    color: brown;
+    font-weight: 800;
+  }
+  .noxious{
+    background-color: red;
+    color:white;
+    font-weight: 300;
+  }
 </style>
