@@ -2,6 +2,9 @@
   <div id="app">
    <h1 :class="classeTitulo">Título teste</h1><br>
    <button @click='mudarClasse'>Mudar Classe</button>
+   <app-contador></app-contador>
+   <app-contador></app-contador>
+   <app-contador></app-contador>
   </div>
 </template>
 
